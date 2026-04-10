@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: transparent;
 }
 
-.App-logo {
-  height: 40vmin;
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+}
+
+/* Sidebar removed completely */
+
+.main-content {
+  height: 100vh;
+  overflow-y: auto;
+  background: transparent;
+  margin-left: 0; 
+  width: 100%;    
+  margin-top: 80px; 
+}
+.navbar {
+  position: fixed;
+  margin-bottom: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem ;
+  background: rgba(0, 0, 0, 0.6); /* transparent black */
+  backdrop-filter: blur(10px);     /* frosted glass effect */
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.highlight {
+  color: #fbbf24;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  margin-right: 50px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.navbar ul li a:hover {
+  color: #fbbf24;
+}
+
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

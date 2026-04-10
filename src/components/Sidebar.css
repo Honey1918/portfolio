@@ -1,0 +1,99 @@
+
+
+/* Sidebar behavior */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: #f59e0b;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  transition: transform 0.4s ease-in-out;
+  z-index: 1000;
+}
+
+/* hidden (mobile/tablet) */
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+/* open */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Main content when sidebar exists (desktop) */
+.main-content.with-sidebar {
+  margin-left: 280px;
+  transition: margin-left 0.4s ease-in-out;
+}
+
+/* Full width when sidebar hidden (mobile/tablet) */
+.main-content.full-width {
+  margin-left: 0;
+  width: 100%;
+  transition: margin-left 0.4s ease-in-out;
+}
+
+/* Hamburger */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 1100;
+  font-weight: bold;
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+  }
+  
+  
+  .highlight {
+    color: #fbbf24;
+  }
+  
+  .nav ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .nav li {
+    margin: 2rem 0;
+  }
+  
+  .nav a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #614d1b;
+  }
+  
+  .nav a.active,
+  .nav a:hover {
+    color: #ffffff;
+  }
+  
+  .theme-mode {
+    font-size: 1.1rem;
+    padding-top: 100rem;
+    border-top: 1px solid #ccc;
+  }
+  
