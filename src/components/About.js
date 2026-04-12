@@ -45,8 +45,8 @@ const About = ({ id }) => {
 
         <div className="stats-box">
           <div className="stat-item">
-            <h3>Top 0.5%</h3>
-            <p> JEE Advanced </p>
+            <h3>1.5 yr+</h3>
+            <p> Experience </p>
           </div>
           <div className="stat-item">
             <h3>800+</h3>
@@ -67,7 +67,7 @@ const About = ({ id }) => {
             <span className="year">June 2025 – Present</span>
             <h4> <a href="https://www.crossbo.com/" target="_blank" rel="noopener noreferrer">SDE-1 (Full Stack) </a></h4>
             <p>
-              Shipped full-stack features across Genie and Luna apps for 3 international hotel chains.
+              Shipped full-stack features across Genie and Luna apps for 10+ international hotel chains.
               Diagnosed critical production incidents, architected scalable REST APIs, and slashed
               asset load time by ~30% using CDN caching.
             </p>

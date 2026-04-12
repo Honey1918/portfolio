@@ -11,8 +11,8 @@ const Sidebar = ({ open, onClose }) => {
         <ul>
           <li><a href="#home" onClick={onClose}>Home</a></li>
           <li><a href="#about" onClick={onClose}>About</a></li>
-          <li><a href="#services" onClick={onClose}>Services</a></li>
           <li><a href="#projects" onClick={onClose}>Projects</a></li>
+          <li><a href="#services" onClick={onClose}>Services</a></li>
           <li><a href="#contact" onClick={onClose}>Contact</a></li>
         </ul>
       </nav>
