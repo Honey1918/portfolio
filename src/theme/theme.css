@@ -1,0 +1,30 @@
+/*
+  Theme tokens. Every color in the app should come from here so a retheme is a
+  one-file change.
+
+  --accent        solid color for highlighted text / links
+  --accent-grad   gradient for buttons, borders, underline bars
+  --accent-rgb    accent as "r, g, b" so it can be used in rgba(var(--accent-rgb), .3)
+  --on-accent     text color that sits on top of --accent-grad
+  --bg-*          the three stops of the mouse-following background gradient
+  --card-bg       opaque card color (needed for gradient borders)
+*/
+
+:root {
+  --accent: #ff5c35;
+  --accent-2: #ff9a3d;
+  --accent-grad: linear-gradient(135deg, #ff5c35, #ff9a3d);
+  --accent-rgb: 255, 92, 53;
+  --on-accent: #111111;
+  --bg-glow: #212121;
+  --bg-mid: #141414;
+  --bg-edge: #0c0c0c;
+  --card-bg: #181818;
+  --font-display: "Montserrat", "Inter", sans-serif;
+
+  --text: #ffffff;
+  --text-soft: #d4d4d8;
+  --text-muted: #a1a1aa;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-border: rgba(255, 255, 255, 0.09);
+}

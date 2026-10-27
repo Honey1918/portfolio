@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./App.css";
 import Home from "./components/Home";
 import About from "./components/About";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import ParticlesBackground from "./components/ParticlesBackground";
 
 function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const backgroundRef = useRef(null);
 
-  // Track mouse for gradient
+  // Track mouse for the background gradient. Written straight to CSS variables
+  // so moving the mouse doesn't re-render the whole app.
   useEffect(() => {
     const handleMouseMove = (e) => {
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      setMousePosition({ x, y });
+      const el = backgroundRef.current;
+      if (!el) return;
+      el.style.setProperty("--mx", `${(e.clientX / window.innerWidth) * 100}%`);
+      el.style.setProperty("--my", `${(e.clientY / window.innerHeight) * 100}%`);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -24,15 +27,8 @@ function App() {
   return (
     <>
       {/* Background Layer */}
-      <div
-        className="background-layer"
-        style={{
-          background: `radial-gradient(
-            circle at ${mousePosition.x}% ${mousePosition.y}%, 
-            rgb(3, 15, 20), rgb(16, 12, 35), rgb(31, 33, 33)
-          )`,
-        }}
-      />
+      <div className="background-layer" ref={backgroundRef} />
+      <ParticlesBackground />
       <header className="navbar">
         <h1 className="logo">PRIYANSH <span className="highlight">KASHYAP</span></h1>
         <nav>

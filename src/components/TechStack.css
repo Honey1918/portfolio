@@ -1,0 +1,80 @@
+.tech-grid {
+  --card-h: 120px;
+  --gap: 1rem;
+  display: flex;
+  gap: var(--gap);
+  justify-content: center;
+}
+
+.tech-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  flex: 1 1 0;
+  max-width: 190px;
+}
+
+/* Stagger the middle column by half a card, like a honeycomb */
+.tech-column:nth-child(2) {
+  margin-top: calc(var(--card-h) / 2 + var(--gap) / 2);
+}
+
+.tech-card {
+  height: var(--card-h);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  border: 3px solid transparent;
+  border-radius: 12px;
+  /* Opaque fill on the padding box + accent gradient on the border box = gradient border */
+  background:
+    linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+    var(--accent-grad) border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px) rotate(-1.5deg);
+  box-shadow: 0 14px 32px rgba(var(--accent-rgb), 0.28);
+}
+
+.tech-icon {
+  width: 44px;
+  height: 44px;
+  color: var(--tech-color);
+  transition: filter 0.25s ease;
+}
+
+.tech-card:hover .tech-icon {
+  filter: drop-shadow(0 0 10px var(--tech-color));
+}
+
+.tech-label {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .tech-grid {
+    --card-h: 96px;
+    --gap: 0.6rem;
+  }
+
+  .tech-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .tech-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+  }
+}

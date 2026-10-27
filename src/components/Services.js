@@ -56,7 +56,7 @@ const Services = ({ id }) => {
   return (
     <section id={id} className="services-section">
       <div className="services-wrapper">
-        <h2 className="services-heading">
+        <h2 className="section-heading">
           MY <span className="highlight">SERVICES</span>
         </h2>
 

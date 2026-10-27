@@ -58,7 +58,8 @@
 
 .email-button:hover {
   transform: translateY(-3px);
-  background: #e0e0e0;
+  background: var(--accent-grad);
+  color: var(--on-accent);
 }
 
 .action-text {

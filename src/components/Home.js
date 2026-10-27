@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import profileImage from "../assets/Priyansh.png";
+import resume from "../assets/Priyansh_SDE1.pdf";
 import { ReactTyped } from 'react-typed';  // Preferred
 
 const Home = ({ id }) => {
@@ -9,7 +10,7 @@ const Home = ({ id }) => {
       <div className="home-left">
         <p className="status">
           <svg width="10" height="10" viewBox="0 0 10 10" className="status-dot">
-            <circle cx="5" cy="5" r="5" fill="#f59e0b" />
+            <circle cx="5" cy="5" r="5" />
           </svg>
           Available for work
         </p>
@@ -21,7 +22,7 @@ const Home = ({ id }) => {
           <ReactTyped
             className="highlight"
             strings={[
-              " SDE-1 @ CrossBo AI",
+              " SDE-1 Backend Engineer @ Digantara",
               " Full Stack Developer",
               " React Native & Flutter Expert",
               " Cloud & Backend Engineer",
@@ -34,7 +35,16 @@ const Home = ({ id }) => {
         <p>
           “Architecting scalable full-stack applications and creating user-centric experiences.”
         </p>
-        <button className="hire-me">Hire Me</button>
+        <div className="home-actions">
+          <a href="#contact" className="hire-me">Hire Me</a>
+          <a
+            href={resume}
+            download="Priyansh_Kashyap_Resume.pdf"
+            className="resume-btn"
+          >
+            Download Resume
+          </a>
+        </div>
       </div>
 
       <div className="home-right">
