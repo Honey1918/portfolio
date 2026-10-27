@@ -29,7 +29,7 @@ const About = ({ id }) => {
             </div>
             <div className="stat-item">
               <h3>15+</h3>
-              <p > <a className="stat-item-link " href="https://github.com/Honey1918" target="_blank" rel="noopener noreferrer">Completed Projects</a></p>
+              <p > <a className="stat-item-link " href="https://github.com/Priyansh1920" target="_blank" rel="noopener noreferrer">Completed Projects</a></p>
             </div>
           </div>
         </div>

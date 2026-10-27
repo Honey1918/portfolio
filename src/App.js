@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import "./App.css";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -9,6 +9,19 @@ import ParticlesBackground from "./components/ParticlesBackground";
 
 function App() {
   const backgroundRef = useRef(null);
+  const navRef = useRef(null);
+
+  // Publish the fixed navbar's height as --nav-h so content and anchor
+  // scrolling can clear it, even if the navbar's height changes (e.g. wrapping).
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    const update = () =>
+      document.documentElement.style.setProperty("--nav-h", `${nav.offsetHeight}px`);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(nav);
+    return () => observer.disconnect();
+  }, []);
 
   // Track mouse for the background gradient. Written straight to CSS variables
   // so moving the mouse doesn't re-render the whole app.
@@ -29,7 +42,7 @@ function App() {
       {/* Background Layer */}
       <div className="background-layer" ref={backgroundRef} />
       <ParticlesBackground />
-      <header className="navbar">
+      <header className="navbar" ref={navRef}>
         <h1 className="logo">PRIYANSH <span className="highlight">KASHYAP</span></h1>
         <nav>
           <ul>

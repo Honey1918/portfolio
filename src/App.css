@@ -17,13 +17,14 @@ body, html, #root {
 
 /* Sidebar removed completely */
 
+/* The page itself scrolls (not this box), so anchor links scroll once, and
+   --nav-h (measured from the fixed navbar in App.js) keeps headings clear of it. */
 .main-content {
-  height: 100vh;
-  overflow-y: auto;
   background: transparent;
-  margin-left: 0; 
-  width: 100%;    
-  margin-top: 80px; 
+  margin-left: 0;
+  width: 100%;
+  padding-top: var(--nav-h, 100px);
+  box-sizing: border-box;
 }
 .navbar {
   position: fixed;
@@ -118,6 +119,7 @@ body, html, #root {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h, 100px);
 }
 
 

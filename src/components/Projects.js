@@ -30,7 +30,7 @@ const projectsList = [
     title: "Flight Reservation System",
     description: "A robust console-or-web system for handling flight bookings, managing passenger reservations, and querying schedules efficiently.",
     techStack: "C++, React",
-    link: "https://github.com/Honey1918/Flight-Resevation-system",
+    link: "https://github.com/Priyansh1920/Flight-Resevation-system",
     images: [fl1, fl2],
   },
   {

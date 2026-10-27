@@ -1,6 +1,7 @@
 /* Section inherits the app's animated radial gradient background via transparency */
 .services-section {
   width: 100%;
+  box-sizing: border-box; /* padding must not push it wider than the viewport */
   background: transparent;
   padding: 3rem 1rem;
   display: flex;
